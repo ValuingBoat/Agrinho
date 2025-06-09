@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festejando a Conexão Campo-Cidade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Festejando a Conexão Campo-Cidade</h1>
+    <p>Unindo tradições, saberes e pessoas</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#conexao">Campo & Cidade</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#jogos">Jogos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="banner">
+    <h1>Juntos somos mais fortes</h1>
+    <p>Descubra como o campo e a cidade caminham lado a lado!</p>
+  </div>
+
+  <section id="sobre">
+    <div class="box">
+      <h2>Sobre o Projeto</h2>
+      <p>Este site foi criado como parte do projeto Agrinho 2025, com o objetivo de valorizar a conexão entre o campo e a cidade. Mostramos como essa parceria é essencial para a vida moderna e para a construção de um futuro sustentável.</p>
+    </div>
+  </section>
+
+  <section id="conexao">
+    <div class="box">
+      <h2>Campo & Cidade: Uma Conexão Forte</h2>
+      <p>O campo fornece alimentos, matérias-primas e cultura. A cidade traz tecnologia, mercados e serviços. Juntos, eles formam um ciclo de colaboração e crescimento.</p>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="galeria">
+      <h2>Galeria de Fotos</h2>
+      <div class="galeria-container">
+        <div class="imagem"><img src="campo.jpg" alt="Campo" class="lightbox-image"></div>
+        <div class="imagem"><img src="cidade.jpg" alt="Cidade" class="lightbox-image"></div>
+        <div class="imagem"><img src="agricultura.jpg" alt="Agricultura" class="lightbox-image"></div>
+        <div class="imagem"><img src="mercado.jpg" alt="Mercado" class="lightbox-image"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="jogos">
+    <div class="box">
+      <h2>Quiz: Conexão Campo-Cidade</h2>
+      <p>Teste seus conhecimentos sobre o campo e a cidade!</p>
+  
+      <form action="respostas.html" method="get">
+  
+        <p><strong>1. O que o campo fornece para a cidade?</strong></p>
+        <label><input type="radio" name="q1" value="a"> Somente cultura</label><br>
+        <label><input type="radio" name="q1" value="b"> Alimentos, matérias-primas e cultura</label><br>
+        <label><input type="radio" name="q1" value="c"> Apenas trabalho</label><br><br>
+  
+        <p><strong>2. Como a cidade ajuda o campo?</strong></p>
+        <label><input type="radio" name="q2" value="a"> Enviando turistas</label><br>
+        <label><input type="radio" name="q2" value="b"> Levando tecnologia, mercados e serviços</label><br>
+        <label><input type="radio" name="q2" value="c"> Comprando terras</label><br><br>
+  
+        <p><strong>3. Qual é uma prática sustentável no campo?</strong></p>
+        <label><input type="radio" name="q3" value="a"> Queimar o solo após a colheita</label><br>
+        <label><input type="radio" name="q3" value="b"> Uso consciente dos recursos naturais</label><br>
+        <label><input type="radio" name="q3" value="c"> Plantio sem rotação de culturas</label><br><br>
+  
+        <p><strong>4. O que significa a expressão “campo e cidade caminham lado a lado”?</strong></p>
+        <label><input type="radio" name="q4" value="a"> Eles competem entre si</label><br>
+        <label><input type="radio" name="q4" value="b"> São independentes</label><br>
+        <label><input type="radio" name="q4" value="c"> São interdependentes e se ajudam mutuamente</label><br><br>
+  
+        <p><strong>5. Como você pode ajudar a manter essa conexão?</strong></p>
+        <label><input type="radio" name="q5" value="a"> Valorizando os produtos locais e a cultura rural</label><br>
+        <label><input type="radio" name="q5" value="b"> Comprando só produtos importados</label><br>
+        <label><input type="radio" name="q5" value="c"> Ignorando a origem dos alimentos</label><br><br>
+  
+        <button type="submit">Enviar Respostas</button>
+      </form>
+    </div>
+  </section>
+  
+
+  <section id="contato">
+    <div class="box">
+      <h2>Fale Conosco</h2>
+      <p>Tem sugestões ou quer mostrar o seu trabalho? Envie um e-mail para <strong>agrinho@exemplo.com</strong>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Projeto Agrinho. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const images = document.querySelectorAll(".lightbox-image");
+    const closeBtn = document.querySelector(".close");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
